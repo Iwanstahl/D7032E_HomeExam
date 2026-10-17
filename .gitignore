@@ -1,0 +1,15 @@
+# Ignore everything by default
+/*
+# ...except these
+!/.gitignore
+!/isawan-3/
+
+# Build output
+*.class
+/isawan-3/out/
+
+# JUnit jar (download separately, see the README)
+/isawan-3/lib/
+
+# Working notes, not part of the hand-in
+/isawan-3/PROGRESS.md
