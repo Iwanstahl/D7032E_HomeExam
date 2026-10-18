@@ -14,4 +14,4 @@ Re-engineer a poorly designed version of the card game Exploding Kittens so that
 
 See [isawan-3/README.md](isawan-3/README.md) for how to compile, run and test the game.
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="60">
+![Java](https://img.shields.io/badge/Java-21%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
