@@ -16,16 +16,16 @@ import game.io.PromptKind;
 import game.player.Player;
 
 /**
- * Plays one turn of the current player: asks them for actions until the turn ends,
+ * Plays one turn of the current player. It asks them for actions until the turn ends,
  * either by drawing a card (rule 9) or by a card that ends it (Skip, Attack, exploding).
  * Each action is playing one card they can play alone, playing 2 or 3 cards of a kind
- * (rule 11f/11g), or drawing.
+ * (rule 11f/11g) or drawing.
  *
- * <p>It never checks which card it is handling. It only asks a card's flags
+ * It never checks which card it is handling. It only asks a card's flags
  * ({@code canPlayAlone}, {@code needsTarget}, {@code canBeNoped}) and calls
  * {@code play}/{@code onDrawn}, so a new card type needs no change here. Whether the turn
- * is over is read from {@link RoundState#turnNumber()}: whatever ends it, the number
- * changes. An attacked player's second turn is a second call to {@link #playTurn()}.
+ * is over is read from {@link RoundState#turnNumber()}, since the number changes whatever
+ * ends the turn. An attacked player's second turn is a second call to {@link #playTurn()}.
  */
 public class TurnManager {
     private final RoundState round;

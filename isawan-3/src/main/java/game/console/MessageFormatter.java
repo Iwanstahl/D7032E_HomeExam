@@ -39,8 +39,8 @@ public class MessageFormatter {
     }
 
     /**
-     * The question, the options as numbered lines ("  0: Attack"), and what to type,
-     * including the time limit and default answer for a timed prompt.
+     * The question, the options as numbered lines ("  0: Attack") and what to type. A timed
+     * prompt also shows the time limit and the default answer.
      */
     public String format(Prompt prompt) {
         StringBuilder text = new StringBuilder();

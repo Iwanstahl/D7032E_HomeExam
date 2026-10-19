@@ -7,15 +7,15 @@ import java.util.function.Supplier;
 import game.card.Card;
 
 /**
- * Says which cards a game is set up with, in three groups: cards every player starts
- * with (a Defuse, rule 2), cards in the deck that hands are dealt from (rule 3), and
- * cards put into the deck only after dealing, so nobody is dealt them (the Exploding
- * Kittens, rule 6). Expansion modules fill it in. {@code GameSetup} decides when each
- * group is used, so it never needs to know which cards or how many.
+ * Says which cards a game is set up with. There are three groups. The first is the cards
+ * every player starts with (a Defuse, rule 2). The second is the deck that hands are dealt
+ * from (rule 3). The third is the cards put into the deck after dealing so nobody is dealt
+ * them (the Exploding Kittens, rule 6). Expansion modules fill it in. {@code GameSetup}
+ * decides when each group is used, so it never needs to know which cards or how many.
  *
- * <p>Cards are given as a {@link Supplier} (e.g. {@code DefuseCard::new}), not as card
- * objects, because every card in the game must be its own object ({@code Hand} removes
- * cards by identity) and each player needs their own starting cards. Every getter
+ * Cards are given as a {@link Supplier} (e.g. {@code DefuseCard::new}) and not as card
+ * objects. Every card in the game must be its own object because {@code Hand} removes
+ * cards by identity, and each player needs their own starting cards. Every getter
  * creates new cards each time it is called.
  */
 public class DeckRecipe {

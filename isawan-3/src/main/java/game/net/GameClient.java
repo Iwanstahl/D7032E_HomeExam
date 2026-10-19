@@ -14,10 +14,10 @@ import game.io.GameEvent;
 import game.io.Prompt;
 
 /**
- * The client program: connects to the server and acts as a {@link ConsolePlayerIO} at the
- * other end of the socket. It decides what to do from the type of each object it receives
- * (an event is printed, a prompt is answered), never from keywords in text (req. 17),
- * and it contains no game rules.
+ * The client program. It connects to the server and acts as a {@link ConsolePlayerIO} at
+ * the other end of the socket. It decides what to do from the type of each object it
+ * receives and never from keywords in text (req. 17). An event is printed and a prompt
+ * is answered. It contains no game rules.
  */
 public class GameClient {
     private final String host;

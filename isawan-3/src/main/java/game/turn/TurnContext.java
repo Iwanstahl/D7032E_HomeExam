@@ -5,12 +5,10 @@ import game.deck.Discard;
 import game.player.Player;
 
 /**
- * Everything a {@code Card} needs to act during one turn: the player acting, the
- * deck and discard pile, the turn-control callbacks, and the
- * shared game actions (telling everyone, asking players to choose, eliminating), and
- * the target player if the card needs one ({@code null} otherwise).
- * Immutable, built fresh and handed to a card for the duration of one {@code play}
- * or {@code onDrawn} call.
+ * Everything a {@code Card} needs to act during one turn. That is the player acting, the
+ * deck and discard pile, the turn control, the shared game actions and the target player
+ * if the card needs one ({@code null} otherwise). It is immutable and built fresh for each
+ * {@code play} or {@code onDrawn} call.
  */
 public final class TurnContext {
     private final Player actor;

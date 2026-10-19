@@ -9,7 +9,7 @@ import java.util.List;
  * created with invalid values, so the rest of the game never checks them again. Which
  * players are bots doesn't matter here: whoever creates the players decides that.
  *
- * <p>The allowed number of players comes from the modules, not from this class, so an
+ * The allowed number of players comes from the modules and not from this class, so an
  * expansion that allows more players (e.g. 6 with Imploding Kittens) needs no change here.
  */
 public final class GameConfig {

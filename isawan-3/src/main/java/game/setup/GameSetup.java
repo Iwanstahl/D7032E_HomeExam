@@ -12,11 +12,10 @@ import game.random.RandomSource;
 import game.turn.RoundState;
 
 /**
- * Sets up a game from a {@link GameConfig}: decides <em>when</em> each group of cards is
- * used, while the {@link ExpansionModule}s decide <em>which</em> cards. It never names a
- * card class or a card count, so a new expansion needs no change here. All randomness
- * (shuffles, start player) comes from the injected {@link RandomSource}, so tests can
- * control it.
+ * Sets up a game from a {@link GameConfig}. It decides when each group of cards is used
+ * and the {@link ExpansionModule}s decide which cards. It never names a card class or a
+ * card count, so a new expansion needs no change here. All randomness (shuffles and the
+ * start player) comes from the injected {@link RandomSource} so tests can control it.
  */
 public class GameSetup {
     /** Cards dealt to each player at the start (rule 5). A setup value, not a hand limit. */
@@ -33,14 +32,14 @@ public class GameSetup {
     }
 
     /**
-     * Sets up a game for {@code players}, in the order of rules 2 to 8: starting cards,
-     * shuffle, deal, add the cards kept out of the deal (the Exploding Kittens), shuffle
-     * again, pick a random start player.
+     * Sets up a game for {@code players} in the order of rules 2 to 8. It gives out the
+     * starting cards, shuffles and deals, adds the cards kept out of the deal (the Exploding
+     * Kittens), shuffles again and picks a random start player.
      *
      * @param players the players, already created with their I/O, seated in this order
      * @return the dealt players, the deck, an empty discard pile and the turn state
      * @throws IllegalArgumentException if {@code players} is null or its size doesn't match
-     *         the config, so rule 1 can't be bypassed
+     *         the config.
      */
     public GameState setUp(GameConfig config, List<Player> players) {
         if(players == null) {

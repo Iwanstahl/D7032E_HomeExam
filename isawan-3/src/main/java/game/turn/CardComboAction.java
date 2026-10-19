@@ -40,8 +40,8 @@ public class CardComboAction {
 
     /**
      * 2 of a kind: {@code actor} takes a random card from {@code target}'s hand (rule 11f).
-     * The index is drawn from {@code [0, hand size)}, so every card is equally likely,
-     * including the last one and a single card. If the target has no cards, nothing happens.
+     * The index is drawn from {@code [0, hand size)}, so every card is equally likely. This
+     * includes the last card and a single card. If the target has no cards, nothing happens.
      */
     public void stealRandom(Player actor, Player target) {
         int size = target.hand().size();

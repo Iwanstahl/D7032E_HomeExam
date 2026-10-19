@@ -15,12 +15,12 @@ import game.io.PromptKind;
 import game.player.Player;
 
 /**
- * Game-level operations that several cards (and later the turn logic) need: telling
- * everyone something, asking a player to choose a player, a card or a deck position, and
- * eliminating a player. Keeping them here means each card only describes its own rule,
- * and the prompt-building and elimination steps exist exactly once.
+ * Game-level operations that several cards and the turn logic need. They tell everyone
+ * something, ask a player to choose a player, a card or a deck position, and eliminate
+ * a player. Keeping them here means each card only describes its own rule and the
+ * prompt-building and elimination steps exist exactly once.
  *
- * <p>It does not change turns. Callers use {@link TurnControl} for that, so the effect of
+ * It does not change turns. Callers use {@link TurnControl} for that, so the effect of
  * a card on turn order stays visible in the card itself.
  */
 public class GameActions {

@@ -19,19 +19,19 @@ import game.player.Player;
 
 /**
  * The short window after a card is played in which other players may Nope it (rule 12).
- * A Nope can itself be Noped ("Yup"), so the window runs in rounds: each round, every
- * player still in the game who holds a Nope and didn't act last is asked once, all at the
- * same time, so a round takes one time limit however many players
- * are asked. If anyone answers "Nope", exactly one Nope card is spent (the first such
- * player in seat order), the outcome flips, and a new round starts so the others can
- * answer back. The window closes when a round passes with no Nope. An even number of
- * Nopes lets the card go ahead, an odd number cancels it.
+ * A Nope can itself be Noped ("Yup"), so the window runs in rounds. In each round every
+ * player who is still in the game, holds a Nope and didn't act last is asked once. They
+ * are all asked at the same time, so a round takes one time limit however many players
+ * are asked. If anyone answers "Nope", one Nope card is spent by the first such player in
+ * seat order. The outcome then flips and a new round starts so the others can answer
+ * back. The window closes when a round passes with no Nope. An even number of Nopes lets
+ * the card go ahead and an odd number cancels it.
  *
- * <p>The window only decides <em>whether</em> the card goes ahead. It doesn't know what
- * the card does. The time limit is passed to players in each {@link Prompt}. Waiting is
- * up to the I/O implementation, and an unanswered prompt counts as "Don't Nope". Each
- * round uses its own thread pool, which is always closed before the round ends. The
- * outcome is tracked in a plain boolean, never inferred from the discard pile.
+ * The window only decides whether the card goes ahead. It doesn't know what the card
+ * does. The time limit is passed to players in each {@link Prompt}. Waiting is up to the
+ * I/O implementation, and an unanswered prompt counts as "Don't Nope". Each round uses
+ * its own thread pool, which is always closed before the round ends. The outcome is
+ * tracked in a plain boolean and never inferred from the discard pile.
  */
 public class NopeTimeWindow {
     private static final int NOPE = 0;
